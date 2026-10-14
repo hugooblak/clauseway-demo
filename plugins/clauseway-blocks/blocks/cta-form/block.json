@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "clauseway/cta-form",
+	"title": "Demo form (email and button, sends nothing)",
+	"category": "widgets",
+	"icon": "email",
+	"description": "An email field and a button. Demo only: it sends nothing and shows a thank-you line saying so.",
+	"textdomain": "clauseway-blocks",
+	"attributes": {
+		"label": { "type": "string", "default": "Work email" },
+		"button": { "type": "string", "default": "Book a demo" },
+		"thanks": { "type": "string", "default": "Thanks. This is a concept site, so nothing was sent." }
+	},
+	"supports": { "html": false, "reusable": false, "multiple": false, "align": false },
+	"render": "file:./render.php"
+}

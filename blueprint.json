@@ -1,0 +1,77 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Clauseway: contract-review AI concept site with a live scan hero, product tabs and scroll sections",
+		"description": "Block theme for a contract-review AI company: a hero where a contract is scanned and clauses are flagged, four product tabs, a scroll-driven how-it-works, a playbook, a security section, FAQ and a demo form (sends nothing). Built for a fictional company.",
+		"author": "hugooblak",
+		"categories": [
+			"Themes"
+		]
+	},
+	"landingPage": "/",
+	"preferredVersions": {
+		"php": "8.3",
+		"wp": "latest"
+	},
+	"features": {
+		"networking": true
+	},
+	"login": true,
+	"steps": [
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "git:directory",
+				"url": "https://github.com/hugooblak/clauseway-demo",
+				"ref": "main",
+				"refType": "branch",
+				"path": "theme/clauseway"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "git:directory",
+				"url": "https://github.com/hugooblak/clauseway-demo",
+				"ref": "main",
+				"refType": "branch",
+				"path": "plugins/clauseway-blocks"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "git:directory",
+				"url": "https://github.com/hugooblak/clauseway-demo",
+				"ref": "main",
+				"refType": "branch",
+				"path": "plugins/clauseway-demo-notes"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "mkdir",
+			"path": "/wordpress/wp-content/clauseway-setup"
+		},
+		{
+			"step": "writeFile",
+			"path": "/wordpress/wp-content/clauseway-setup/setup.php",
+			"data": {
+				"resource": "url",
+				"url": "https://raw.githubusercontent.com/hugooblak/clauseway-demo/main/content/setup.php"
+			}
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-load.php'; require '/wordpress/wp-content/clauseway-setup/setup.php';"
+		}
+	]
+}

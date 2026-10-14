@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "clauseway/hero-scan",
+	"title": "Hero scan (contract being read and flagged)",
+	"category": "widgets",
+	"icon": "media-document",
+	"description": "A contract page that gets scanned: a beam sweeps down, clauses are flagged as it passes and comment cards appear on drawn lines. Loops every 10 seconds.",
+	"textdomain": "clauseway-blocks",
+	"attributes": {
+		"docTitle": { "type": "string", "default": "Master Services Agreement" },
+		"clauses": { "type": "string", "default": "Services | Provider will perform the services described in each Statement of Work that both parties agree to. | none\nLimitation of liability | Provider's total liability for any claim under this Agreement will not exceed the fees paid by Customer in the twelve months before the claim. | high\nIndemnification | Customer will defend and hold harmless Provider against all claims arising from Customer's use of the services or breach of this Agreement. | high\nTerm and termination | This Agreement runs for one year. Provider may end it for convenience on thirty days' written notice. | med\nGoverning law | This Agreement is governed by the laws of the State of New York. | none" },
+		"cards": { "type": "string", "default": "Low liability cap | The cap is low and may not cover your losses. Ask for a higher cap, or none.\nBroad indemnity | You cover Provider for a wide range of claims. Narrow the scope.\nOne-sided exit | Only Provider can end this early. Ask for the same right." }
+	},
+	"supports": { "html": false, "reusable": false, "multiple": false, "align": false },
+	"render": "file:./render.php"
+}

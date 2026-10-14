@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "clauseway/how-scroll",
+	"title": "How it works (scroll-driven, three steps)",
+	"category": "widgets",
+	"icon": "editor-ol",
+	"description": "A pinned section: the three steps on the left, a document on the right that is dropped in, scanned and turned into a summary as the visitor scrolls. Needs full width and no parent with hidden overflow.",
+	"textdomain": "clauseway-blocks",
+	"attributes": {
+		"heading": { "type": "string", "default": "Three steps." },
+		"steps": { "type": "string", "default": "Drop in a contract | Upload a PDF or Word file, or forward it from your inbox.\nEvery clause gets read | The AI reads each clause and checks it against your playbook.\nGet a report you can act on | See what is risky, why, and the wording to ask for instead." },
+		"fileName": { "type": "string", "default": "Vendor agreement.pdf" },
+		"clauses": { "type": "string", "default": "Liability | High | Provider's liability is capped at three months of fees.\nIndemnity | High | Customer covers all claims, including Provider's own.\nTermination | Medium | Only Provider may end the Agreement early.\nGoverning law |  | New York law applies to this Agreement." },
+		"readLabel": { "type": "string", "default": "Clauses read" },
+		"reportTitle": { "type": "string", "default": "Review summary" },
+		"reportRows": { "type": "string", "default": "Liability cap | High\nIndemnity | High\nTermination | Medium" },
+		"reportButton": { "type": "string", "default": "Open redlines" }
+	},
+	"supports": { "html": false, "reusable": false, "multiple": false, "align": false },
+	"render": "file:./render.php"
+}

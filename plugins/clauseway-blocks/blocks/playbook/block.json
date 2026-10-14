@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "clauseway/playbook",
+	"title": "Playbook (rules checked against clauses)",
+	"category": "widgets",
+	"icon": "yes-alt",
+	"description": "Your rules on the left, the contract clauses on the right. Each rule draws a line to the clause it matched and marks it as matching or off playbook.",
+	"textdomain": "clauseway-blocks",
+	"attributes": {
+		"rules": { "type": "string", "default": "Liability capped at 12 months of fees | 2 | off\nIndemnity runs both ways | 4 | ok\nNotice to end early: 30 days or more | 3 | ok\nPayment due in 45 days or more | 1 | off" },
+		"clauses": { "type": "string", "default": "Payment | Customer will pay each invoice within fifteen days of receipt.\nLiability | Provider's liability will not exceed the fees paid in the prior three months.\nTermination | Either party may end this Agreement on thirty days' written notice.\nIndemnity | Each party will defend and hold the other harmless against third-party claims." },
+		"ruleLabel": { "type": "string", "default": "Playbook rule" },
+		"offLabel": { "type": "string", "default": "Off playbook" },
+		"okLabel": { "type": "string", "default": "Matches" }
+	},
+	"supports": { "html": false, "reusable": false, "multiple": false, "align": false },
+	"render": "file:./render.php"
+}

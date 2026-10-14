@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "clauseway/vault",
+	"title": "Security (dark, scroll-driven lock)",
+	"category": "widgets",
+	"icon": "lock",
+	"description": "A pinned dark section: heading and three points on the left, a document that folds into a sealed card and a lock that closes as the visitor scrolls. Needs full width and no parent with hidden overflow.",
+	"textdomain": "clauseway-blocks",
+	"attributes": {
+		"heading": { "type": "string", "default": "Your contracts stay yours." },
+		"sub": { "type": "string", "default": "Built so that only the right people see each document, and you can see who did." },
+		"bullets": { "type": "string", "default": "key | Access is set by role, per contract.\neye | Every view and edit is written to a log.\ntrash | You choose what is kept and what is deleted." },
+		"sealLabel": { "type": "string", "default": "SEALED" }
+	},
+	"supports": { "html": false, "reusable": false, "multiple": false, "align": false },
+	"render": "file:./render.php"
+}
